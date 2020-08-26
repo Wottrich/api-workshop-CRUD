@@ -45,7 +45,7 @@ class UserController {
     async delete (req: Request, res: Response) {
         const {
             id
-        } = req.body
+        } = req.params
 
         const trx = await knex.transaction()
 
@@ -72,6 +72,9 @@ class UserController {
         const {
             id, name
         } = req.body
+
+        console.log(id)
+        console.log(name)
 
         const trx = await knex.transaction()
 
